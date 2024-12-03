@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { Context } from "../main";
 import { Link, useNavigate, Navigate } from "react-router-dom";
@@ -16,7 +16,7 @@ const Login = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/login",
+          "https://hms-backend-seven.vercel.app/v1/user/login",
           { email, password, role: "Patient" },
           {
             withCredentials: true,
@@ -45,7 +45,7 @@ const Login = () => {
         <h2>Sign In</h2>
         <p>Please Login To Continue</p>
         <p>
-        Welcome to ZeeCare Medical Institute's Patient Portal. Your health journey begins here. We're committed to providing personalized care and ensuring your well-being every step of the way.
+        Welcome to ZeeCare Medical Institutes Patient Portal. Your health journey begins here. We are committed to providing personalized care and ensuring your well-being every step of the way.
         </p>
         <form onSubmit={handleLogin}>
           <input
